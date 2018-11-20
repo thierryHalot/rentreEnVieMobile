@@ -1,0 +1,34 @@
+<!--
+  Generated template for the MdpOublierPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mot de passe oublié ?</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list style="margin-top: 20%">
+    <ion-item style="padding-bottom: 10%">
+      <ion-label floating>Votre adresse mail :</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label text-wrap>Je ne suis pas un robot</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+<ion-item>
+  <p text-wrap>Veuillez renseigner votre adresse mail, un nouveau mot de passe vous sera envoyé.</p>
+</ion-item>
+    <ion-item style="padding-top: 10%">
+      <button ion-button  color="secondary" block large >Confirmer</button>
+      <button ion-button (click)="redirectHome()" color="danger" block large>Annuler</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

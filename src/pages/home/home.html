@@ -1,14 +1,16 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Accueil
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<div padding style="margin-top: 20%">
+    <ion-img width="250" height="250" offset-1 src="assets/imgs/logoApli.png"></ion-img>
+    <button ion-button  color="secondary" (click)="redirectInscriptionPage()" full>Inscription</button>
+    <button ion-button (click)="redirectConnexionPage()" full>Connexion</button>
+</div>
 </ion-content>
