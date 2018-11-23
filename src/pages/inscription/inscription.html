@@ -13,41 +13,90 @@
 
 
 <ion-content padding>
-  <form (ngSubmit)="saveUser()" novalidate>
+  <form [formGroup]="formInsc" (ngSubmit)="verifInscUser()" novalidate>
   <div [class.cacher]="checkStatus">
   <ion-list>
 <p>Mes informations personnelles :</p>
     <ion-item>
       <ion-label floating>Nom :</ion-label>
-      <ion-input [(ngModel)]="user.nom" type="text" name="nom" maxlength="5" required></ion-input>
+      <ion-input required [(ngModel)]="user.nom" type="text" formControlName="nom" name="nom"  ></ion-input>
     </ion-item>
+    <div>
+      <ng-container  *ngFor="let validation of validation_messages.nom" >
+        <div *ngIf="formInsc.get('nom').hasError(validation.type) && formInsc.get('nom').touched" class="erreurInsc">
+          <p>{{validation.message}}</p>
+        </div>
+      </ng-container  >
+    </div>
     <ion-item>
       <ion-label floating>Prenom :</ion-label>
-      <ion-input [(ngModel)]="user.prenom" name="prenom" maxlength="30" type="text" required></ion-input>
+      <ion-input [(ngModel)]="user.prenom" formControlName="prenom" name="prenom" maxlength="30" type="text" required></ion-input>
     </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.prenom" >
+              <div *ngIf="formInsc.get('prenom').hasError(validation.type) && formInsc.get('prenom').touched" class="erreurInsc">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
     <ion-item>
       <ion-label floating>Age :</ion-label>
-      <ion-input [(ngModel)]="user.age" name="age" type="number" required></ion-input>
+      <ion-input [(ngModel)]="user.age" formControlName="age" name="age" type="tel" required></ion-input>
     </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.age" >
+              <div *ngIf="formInsc.get('age').hasError(validation.type) && formInsc.get('age').touched" class="erreurInsc">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
     <ion-item>
       <ion-label floating>Sexe :</ion-label>
-      <ion-select [(ngModel)]="user.sexe" name="sexe">
+      <ion-select [(ngModel)]="user.sexe" formControlName="sexe" name="sexe">
         <ion-option value="homme">Homme</ion-option>
         <ion-option value="femme">Femme</ion-option>
       </ion-select>
     </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.sexe" >
+              <div *ngIf="formInsc.get('sexe').hasError(validation.type) && formInsc.get('sexe').touched" class="erreurInsc">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
     <ion-item>
       <ion-label floating>Tel :</ion-label>
-      <ion-input [(ngModel)]="user.tel" name="tel" type="tel" maxlength="10"></ion-input>
+      <ion-input [(ngModel)]="user.tel" formControlName="tel" name="tel" type="tel" maxlength="10"></ion-input>
     </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.tel" >
+              <div *ngIf="formInsc.get('tel').hasError(validation.type) && formInsc.get('tel').touched" class="erreurInsc">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
     <ion-item>
       <ion-label floating>Adresse :</ion-label>
-      <ion-input [(ngModel)]="user.adresse" name="adresse" maxlength="100" type="text"></ion-input>
+      <ion-input [(ngModel)]="user.adresse" formControlName="adresse" name="adresse" maxlength="100" type="text"></ion-input>
     </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.adresse" >
+              <div *ngIf="formInsc.get('adresse').hasError(validation.type) && formInsc.get('adresse').touched" class="erreurInsc">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
     <ion-item>
       <ion-label floating>Mail :</ion-label>
-      <ion-input [(ngModel)]="user.mail" name="mail" type="email" maxlength="100"></ion-input>
+      <ion-input [(ngModel)]="user.mail" formControlName="mail" name="mail" type="email" maxlength="100"></ion-input>
     </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.mail" >
+              <div *ngIf="formInsc.get('mail').hasError(validation.type) && formInsc.get('mail').touched" class="erreurInsc">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
   </ion-list>
   <ion-item text-right>
     <a (click)="showInfoCompInsc()" class="curseurClick">Imformations complémentaires <ion-icon name="arrow-dropright-circle"></ion-icon></a>
@@ -58,25 +107,59 @@
   <p>Mes informations complémentaires :</p>
   <ion-item>
     <ion-label floating>Pseudo :</ion-label>
-    <ion-input [(ngModel)]="user.pseudo" name="pseudo" type="text" maxlength="10" required></ion-input>
+    <ion-input [(ngModel)]="user.pseudo" formControlName="pseudo" name="pseudo" type="text" maxlength="10" required></ion-input>
   </ion-item>
+
+    <div>
+        <ng-container  *ngFor="let validation of validation_messages.pseudo" >
+            <div *ngIf="formInsc.get('pseudo').hasError(validation.type) && formInsc.get('pseudo').touched" class="erreurInsc">
+                <p>{{validation.message}}</p>
+            </div>
+        </ng-container  >
+    </div>
+
   <ion-item>
     <ion-label floating>Mot de passe :</ion-label>
-    <ion-input [(ngModel)]="user.mdp" name="mdp" type="password" maxlength="20" required></ion-input>
+    <ion-input [(ngModel)]="user.mdp" formControlName="mdp" name="mdp" type="password" maxlength="20" required></ion-input>
   </ion-item>
+
+    <div>
+        <ng-container  *ngFor="let validation of validation_messages.mdp" >
+            <div *ngIf="formInsc.get('mdp').hasError(validation.type) && formInsc.get('mdp').touched" class="erreurInsc">
+                <p>{{validation.message}}</p>
+            </div>
+        </ng-container  >
+    </div>
   <ion-item>
     <ion-label floating>Confirmer :</ion-label>
-    <ion-input [(ngModel)]="user.confMdp" name="confMdp" type="password" maxlength="20" required></ion-input>
+    <ion-input [(ngModel)]="user.confMdp" formControlName="confMdp" name="confMdp" type="password" maxlength="20" required></ion-input>
   </ion-item>
+    <div>
+        <ng-container  *ngFor="let validation of validation_messages.confMdp" >
+            <div *ngIf="formInsc.get('confMdp').hasError(validation.type) && formInsc.get('confMdp').touched" class="erreurInsc">
+                <p>{{validation.message}}</p>
+            </div>
+            <div *ngIf="verifPsw() && formInsc.get('confMdp').touched && !formInsc.get('confMdp').hasError(validation.type)" class="erreurInsc">
+                <p>Le mot de passe renseigné ne correspont pas.</p>
+            </div>
+        </ng-container  >
+    </div>
   <ion-item floating>
     <ion-label>Fumeur :</ion-label>
     <span item-content>Non</span>
-   <ion-toggle [(ngModel)]="user.fumeur" name="fumeur" class="text-toggle" type="radio" required></ion-toggle>
+   <ion-toggle [(ngModel)]="user.fumeur" formControlName="fumeur" name="fumeur" class="text-toggle" type="radio" required></ion-toggle>
     <span item-end>Oui</span>
   </ion-item>
+    <div>
+        <ng-container  *ngFor="let validation of validation_messages.fumeur" >
+            <div *ngIf="formInsc.get('fumeur').hasError(validation.type) && formInsc.get('fumeur').touched" class="erreurInsc">
+                <p>{{validation.message}}</p>
+            </div>
+        </ng-container  >
+    </div>
   <ion-item>
     <ion-label floating>Musiques Favories :</ion-label>
-    <ion-select [(ngModel)]="user.musiqueFavoris" name="musiqueFavoris" type="checkbox" required>
+    <ion-select [(ngModel)]="user.musiqueFavoris" formControlName="musiqueFavoris" name="musiqueFavoris" type="checkbox" required>
       <ion-option value="Généraliste">Généraliste</ion-option>
       <ion-option value="RnB">RnB</ion-option>
       <ion-option value="Hip Hop">Hip Hop</ion-option>
@@ -93,9 +176,16 @@
       <ion-option value="Styles variés">Styles variés</ion-option>
     </ion-select>
   </ion-item>
+    <div>
+        <ng-container  *ngFor="let validation of validation_messages.musiqueFavoris" >
+            <div *ngIf="formInsc.get('musiqueFavoris').hasError(validation.type) && formInsc.get('musiqueFavoris').touched" class="erreurInsc">
+                <p>{{validation.message}}</p>
+            </div>
+        </ng-container  >
+    </div>
   <ion-item>
     <ion-label floating>Club Favoris :</ion-label>
-    <ion-select [(ngModel)]="user.clubFavoris" name="clubFavoris" type="checkbox" required>
+    <ion-select [(ngModel)]="user.clubFavoris" formControlName="clubFavoris" name="clubFavoris" type="checkbox" required>
       <ion-option value="Le Milk">Le Milk</ion-option>
       <ion-option value="Le Heat">Le Heat</ion-option>
       <ion-option value="Le Pulp">Le Pulp</ion-option>
@@ -127,6 +217,13 @@
 
     </ion-select>
   </ion-item>
+    <div>
+        <ng-container  *ngFor="let validation of validation_messages.clubFavoris" >
+            <div *ngIf="formInsc.get('clubFavoris').hasError(validation.type) && formInsc.get('clubFavoris').touched" class="erreurInsc">
+                <p>{{validation.message}}</p>
+            </div>
+        </ng-container  >
+    </div>
   <ion-item>
     <div text-wrap style="max-height: 100px; overflow-y: auto;">
       <p>dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
@@ -161,10 +258,19 @@
         fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf</p>
     </div>
   </ion-item>
+  <ion-list>
   <ion-item>
-    <ion-label text-wrap><a style="cursor: pointer;">J'accepte les conditions d'utilisations</a></ion-label>
-    <ion-checkbox [(ngModel)]="user.condUtil" name="condUtil" type="radio" required></ion-checkbox>
+    <ion-label text-wrap ><a style="cursor: pointer;">J'accepte les conditions d'utilisations</a></ion-label>
+    <ion-checkbox [(ngModel)]="user.condUtil"  formControlName="condUtil" name="condUtil" type="radio" required></ion-checkbox>
   </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.condUtil" >
+              <div *ngIf="formInsc.get('condUtil').hasError(validation.type) && formInsc.get('condUtil').touched" class="erreurInsc">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
+  </ion-list>
   <div padding offset-1 col-10>
     <button ion-button color="secondary" type="submit"  full>Valider</button>
   </div>

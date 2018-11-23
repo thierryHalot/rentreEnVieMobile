@@ -16,3 +16,13 @@ page-inscription .curseurClick{
 
   cursor: pointer;
 }
+
+page-inscription .erreurInsc{
+
+  margin-top: 3px;
+  color: white;
+  text-align: center;
+  border: 1px solid #FF0004;
+  background-color: #ff1c1c;
+  border-radius: 20px;
+}
