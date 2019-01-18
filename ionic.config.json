@@ -1,5 +1,23 @@
 {
   "name": "rentreEnVie",
-  "integrations": {},
-  "type": "ionic-angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "v3": true,
+  "typescript": true,
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "proxies": [
+    {
+      "path": "/",
+      "proxyUrl": "http://rentre-en-vie.fr"
+    }
+  ],
+  "pro_id": "xyz-projectid",
+  "id": "xyz-projectid"
 }
