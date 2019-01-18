@@ -14,26 +14,40 @@
 
 
 <ion-content padding>
-
+<form [formGroup]="formCo" (ngSubmit)="checkInfoConnexion()">
   <ion-list style="margin-top: 20%">
 
     <ion-item>
       <ion-label>Pseudo :</ion-label>
-      <ion-input required type="text"></ion-input>
+      <ion-input required type="text" formControlName="pseudo" required></ion-input>
     </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.pseudo" >
+              <div *ngIf="formCo.get('pseudo').hasError(validation.type) && formCo.get('pseudo').touched" class="mesageErreurFormulaire">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
 
     <ion-item>
       <ion-label>Mot de passe :</ion-label>
-      <ion-input required type="password"></ion-input>
+      <ion-input required type="password" formControlName="mdp" required></ion-input>
     </ion-item>
+      <div>
+          <ng-container  *ngFor="let validation of validation_messages.mdp" >
+              <div *ngIf="formCo.get('mdp').hasError(validation.type) && formCo.get('mdp').touched" class="mesageErreurFormulaire">
+                  <p>{{validation.message}}</p>
+              </div>
+          </ng-container  >
+      </div>
 
   </ion-list>
 
   <div padding>
-    <button ion-button full>Connexion</button>
+    <button ion-button full type="submit">Connexion</button>
   </div>
   <div text-center>
     <a style="color: blue; cursor: pointer;" (click)="redirectMdpOublier()">Mot de passe oublié ?</a>
   </div>
-
+</form>
 </ion-content>

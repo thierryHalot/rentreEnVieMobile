@@ -1,0 +1,128 @@
+<!--
+  Generated template for the PreferencePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Mes Préferences
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form [formGroup]="formPreference" (ngSubmit)="submitPreference()">
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Sexe</ion-label>
+      <ion-select formControlName="sexe" value="indifferent" type="checkbox">
+        <ion-option value="indifferent">Indifférent</ion-option>
+        <ion-option value="homme">Homme</ion-option>
+        <ion-option value="femme">Femme</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Age</ion-label>
+      <ion-select formControlName="age" type="checkbox">
+        <ion-option value="indifferent">Indifférent</ion-option>
+        <ion-option value="18-24">18-24 ans</ion-option>
+        <ion-option value="25-35">25-35 ans</ion-option>
+        <ion-option value="35+">35 ans et +</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Fumeur</ion-label>
+      <ion-select formControlName="fumeur" type="checkbox">
+        <ion-option value="indifferent">Indifférent</ion-option>
+        <ion-option value="true">Oui</ion-option>
+        <ion-option value="false">Non</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Périmètre</ion-label>
+      <ion-select formControlName="perimetre" type="checkbox">
+        <ion-option value="indifferent">Indifférent</ion-option>
+        <ion-option value="1">0-1 km</ion-option>
+        <ion-option value="2">0-2 km</ion-option>
+        <ion-option value="3">0-3 km</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Musiques Favories :</ion-label>
+      <ion-select formControlName="musiqueFavoris" type="checkbox">
+        <ion-option value="indifferent">Indifférent</ion-option>
+        <ion-option value="Généraliste">Généraliste</ion-option>
+        <ion-option value="RnB">RnB</ion-option>
+        <ion-option value="Hip Hop">Hip Hop</ion-option>
+        <ion-option value="Latino">Latino</ion-option>
+        <ion-option value="House">House</ion-option>
+        <ion-option value="Rock">Rock</ion-option>
+        <ion-option value="Disco">Disco</ion-option>
+        <ion-option value="Techno">Techno</ion-option>
+        <ion-option value="Afro">Afro</ion-option>
+        <ion-option value="Electro">Electro</ion-option>
+        <ion-option value="Salsa">Salsa</ion-option>
+        <ion-option value="Funk">Funk</ion-option>
+        <ion-option value="Reggae">Reggae</ion-option>
+        <ion-option value="Styles variés">Styles variés</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Club Favoris :</ion-label>
+      <ion-select  formControlName="clubFavoris" type="checkbox" required>
+        <ion-option value="indifferent">Indifférent</ion-option>
+        <ion-option value="Le Milk">Le Milk</ion-option>
+        <ion-option value="Le Heat">Le Heat</ion-option>
+        <ion-option value="Le Pulp">Le Pulp</ion-option>
+        <ion-option value="L'Osmose">L'Osmose</ion-option>
+        <ion-option value="Le Coconuts">Le Coconuts</ion-option>
+        <ion-option value="Le Fizz">Le Fizz</ion-option>
+        <ion-option value="Le Point Zero">Le Point Zero</ion-option>
+        <ion-option value="L'Opéra">L'Opéra</ion-option>
+        <ion-option value="La Dune">La Dune</ion-option>
+        <ion-option value="Le Panama">Le Panama</ion-option>
+        <ion-option value="Le Dream">Le Dream</ion-option>
+        <ion-option value="L'OT">L'OT</ion-option>
+        <ion-option value="Les Coulisses">Les Coulisses</ion-option>
+        <ion-option value="Le Domaine de verchant">Le Domaine de verchant</ion-option>
+        <ion-option value="Le Clos">Le Clos</ion-option>
+        <ion-option value="Le Prose">Le Prose</ion-option>
+        <ion-option value="Le Mas du Ministre">Le Mas du Ministre</ion-option>
+        <ion-option value="Le Mas du courant">Le Mas du courant</ion-option>
+        <ion-option value="Le Mas du cheval">Le Mas du cheval</ion-option>
+        <ion-option value="Le Zèbre bleu">Le Zèbre bleu</ion-option>
+        <ion-option value="La Voile bleu">La Voile bleu</ion-option>
+        <ion-option value="L'Effet Mer">L'Effet Mer</ion-option>
+        <ion-option value="La Paillotte bambou">La Paillotte bambou</ion-option>
+        <ion-option value="Le Carré Mer">Le Carré Mer</ion-option>
+        <ion-option value="Le Beach">Le Beach</ion-option>
+        <ion-option value="Le Latzarro">Le Latzarro</ion-option>
+        <ion-option value="Les pieds nus">Les pieds nus</ion-option>
+        <ion-option value="Le Lezard">Le Lezard</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Statut</ion-label>
+      <ion-select formControlName="statut" type="checkbox">
+        <ion-option value="indifferent">Indifférent</ion-option>
+        <ion-option value="sam">Sam</ion-option>
+        <ion-option value="consomateur">Consomateur</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div padding offset-1 col-10>
+    <button ion-button color="secondary" type="submit"  full>Rechercher</button>
+  </div>
+</form>
+
+</ion-content>

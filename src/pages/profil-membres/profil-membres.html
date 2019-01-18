@@ -1,0 +1,75 @@
+<!--
+  Generated template for the ProfilMembresPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Profil de {{user.pseudo}}
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img *ngIf="user.img !== undefined && user.img !== null && user.img !== '';else imgDefaut" [src]="'http://rentre-en-vie-api.fr:80/build/img/'+user.pseudo +'/' + user.img" width="150" height="200" offset-2 col-8 style="border-radius: 50%;">
+  <ng-template #imgDefaut>
+  <img width="150" height="200" offset-2 col-8 style="border-radius: 50%;"  src="assets/profilImg/profilDefault.jpeg">
+  </ng-template>
+  <p text-center>{{user.pseudo}}</p>
+  <p text-center>{{user.role}}</p>
+  <ion-grid offset-1>
+    <ion-row>
+      <ion-col col-7>
+        <p>Age :</p>
+      </ion-col>
+      <ion-col col-5>
+        <p>{{user.age}} ans</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-7>
+        <p>Sexe :</p>
+      </ion-col>
+      <ion-col col-5>
+        <p>{{user.sexe}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-7>
+        <p>Fumeur :</p>
+      </ion-col>
+      <ion-col col-5>
+        <p *ngIf="user.fumeur == true">Oui</p>
+        <p *ngIf="user.fumeur == false">Non</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-7>
+        <p>Club Favoris :</p>
+      </ion-col>
+      <ion-col col-5>
+        <p>{{user.clubFavoris}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-7>
+        <p>Style de musique :</p>
+      </ion-col>
+      <ion-col col-5>
+        <p>{{user.musiqueFavoris}}</p>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+  <button col-10 offset-1 ion-button  color="secondary" (click)="redidirectToPageMsg()" [class.displayBtnMessage]="checkifBlocked" full>Message</button>
+  <button col-10 offset-1 ion-button  color="danger" (click)="getIfblocked()" full>Bloquer</button>
+</ion-content>

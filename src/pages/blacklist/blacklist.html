@@ -1,0 +1,37 @@
+<!--
+  Generated template for the BlacklistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Blacklist
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item *ngFor="let blacklist of userBlacklist" (click)="deleteBlacklist(blacklist.id)">
+    <ion-avatar item-start>
+      <img *ngIf="blacklist.userBloquer.img !== undefined && blacklist.userBloquer.img !== null && blacklist.userBloquer.img !== '';else imgDefaut" [src]="'http://rentre-en-vie-api.fr:80/build/img/'+blacklist.userBloquer.pseudo +'/'+ blacklist.userBloquer.img">
+      <ng-template #imgDefaut>
+      <img src="assets/profilImg/profilDefault.jpeg">
+      </ng-template>
+    </ion-avatar>
+    <h2>{{blacklist.userBloquer.pseudo}}</h2>
+    <p>Bloquer le {{blacklist.date}}</p>
+    <button ion-button clear icon-only color="dark" item-end ><ion-icon  name="add"></ion-icon></button>
+  </ion-item>
+</ion-list>
+</ion-content>

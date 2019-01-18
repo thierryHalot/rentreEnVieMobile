@@ -263,7 +263,7 @@ formInsc : FormGroup;
 
 
                 this.restPro.verifInscUser(data).subscribe(res => {
-
+                    console.log(res);
                     if (res) {
                         //si le mail et le pseudo son egale a false alors j'affiche un message
                         if (!res['validMail'] && !res['validPseudo']) {

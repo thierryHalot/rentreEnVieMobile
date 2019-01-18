@@ -1,0 +1,254 @@
+<!--
+  Generated template for the ProfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Mon profil
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="formProfil"  novalidate>
+    <div [class.cacher]="checkStatus">
+      <ion-list>
+        <p>Modifier mes informations personnelles :</p>
+        <ion-item>
+          <ion-label floating>Nom :</ion-label>
+          <ion-input required type="text" formControlName="nom"></ion-input>
+        </ion-item>
+        <div>
+          <ng-container  *ngFor="let validation of validation_messages.nom" >
+            <div *ngIf="formProfil.get('nom').hasError(validation.type) && formProfil.get('nom').touched">
+              <p class="mesageErreurFormulaire">{{validation.message}}</p>
+            </div>
+          </ng-container  >
+        </div>
+        <ion-item>
+          <ion-label floating>Prenom :</ion-label>
+          <ion-input formControlName="prenom"  maxlength="30" type="text" required></ion-input>
+        </ion-item>
+        <div>
+          <ng-container  *ngFor="let validation of validation_messages.prenom" >
+            <div *ngIf="formProfil.get('prenom').hasError(validation.type) && formProfil.get('prenom').touched">
+              <p class="mesageErreurFormulaire">{{validation.message}}</p>
+            </div>
+          </ng-container  >
+        </div>
+        <ion-item>
+          <ion-label floating>Age :</ion-label>
+          <ion-input formControlName="age" type="tel" required></ion-input>
+        </ion-item>
+        <div>
+          <ng-container  *ngFor="let validation of validation_messages.age" >
+            <div *ngIf="formProfil.get('age').hasError(validation.type) && formProfil.get('age').touched">
+              <p class="mesageErreurFormulaire">{{validation.message}}</p>
+            </div>
+          </ng-container  >
+        </div>
+        <ion-item>
+          <ion-label floating>Sexe :</ion-label>
+          <ion-select formControlName="sexe">
+            <ion-option value="homme">Homme</ion-option>
+            <ion-option value="femme">Femme</ion-option>
+          </ion-select>
+        </ion-item>
+        <div>
+          <ng-container  *ngFor="let validation of validation_messages.sexe" >
+            <div *ngIf="formProfil.get('sexe').hasError(validation.type) && formProfil.get('sexe').touched">
+              <p class="mesageErreurFormulaire">{{validation.message}}</p>
+            </div>
+          </ng-container  >
+        </div>
+        <ion-item>
+          <ion-label floating>Tel :</ion-label>
+          <ion-input formControlName="tel" type="tel" maxlength="10"></ion-input>
+        </ion-item>
+        <div>
+          <ng-container  *ngFor="let validation of validation_messages.tel" >
+            <div *ngIf="formProfil.get('tel').hasError(validation.type) && formProfil.get('tel').touched">
+              <p class="mesageErreurFormulaire">{{validation.message}}</p>
+            </div>
+          </ng-container  >
+        </div>
+        <ion-item>
+          <ion-label floating>Adresse :</ion-label>
+          <ion-input formControlName="adresse" maxlength="100" type="text"></ion-input>
+        </ion-item>
+        <div>
+          <ng-container  *ngFor="let validation of validation_messages.adresse" >
+            <div *ngIf="formProfil.get('adresse').hasError(validation.type) && formProfil.get('adresse').touched">
+              <p class="mesageErreurFormulaire">{{validation.message}}</p>
+            </div>
+          </ng-container  >
+        </div>
+        <ion-item>
+          <ion-label floating>Mail :</ion-label>
+          <ion-input formControlName="mail" type="email" maxlength="100"></ion-input>
+        </ion-item>
+        <div>
+          <ng-container  *ngFor="let validation of validation_messages.mail" >
+            <div *ngIf="formProfil.get('mail').hasError(validation.type) && formProfil.get('mail').touched">
+              <p class="mesageErreurFormulaire">{{validation.message}}</p>
+            </div>
+          </ng-container  >
+        </div>
+      </ion-list>
+      <ion-item text-right>
+        <a (click)="showInfoCompInsc()" class="curseurClick" text-wrap>Modifier mes imformations complémentaires <ion-icon name="arrow-dropright-circle"></ion-icon></a>
+      </ion-item>
+    </div>
+    <!-- Affichage des infos complémentaire -->
+    <div id="infoComplInscr" [class.cacher]="!checkStatus">
+      <p>Mes informations complémentaires :</p>
+      <img *ngIf="imgUser !== undefined && imgUser !== null;else imgDefaut" width="150" height="200" offset-2 col-8 style="border-radius: 50%;"  [src]="imgUser">
+      <ng-template #imgDefaut>
+        <img width="150" height="200" offset-2 col-8 style="border-radius: 50%;" src="assets/profilImg/profilDefault.jpeg">
+      </ng-template>
+
+      <ion-item no-lines>
+        <ion-input type="file" name="img" accept="image/*" (change)="changeListener($event)"></ion-input>
+
+      </ion-item>
+      <button col-8 offset-2 ion-button (click)="sendImage()" color="light" full>Modifier</button>
+      <ion-item>
+        <ion-label floating>Pseudo :</ion-label>
+        <ion-input formControlName="pseudo" type="text" maxlength="10" required></ion-input>
+      </ion-item>
+
+      <div>
+        <ng-container  *ngFor="let validation of validation_messages.pseudo" >
+          <div *ngIf="formProfil.get('pseudo').hasError(validation.type) && formProfil.get('pseudo').touched">
+            <p class="mesageErreurFormulaire">{{validation.message}}</p>
+          </div>
+        </ng-container  >
+      </div>
+
+      <ion-item>
+        <ion-label floating>Modifier mot de passe :</ion-label>
+        <ion-input formControlName="mdp" type="password" maxlength="20" ></ion-input>
+      </ion-item>
+
+      <div>
+        <ng-container  *ngFor="let validation of validation_messages.mdp" >
+          <div *ngIf="formProfil.get('mdp').hasError(validation.type) && formProfil.get('mdp').touched">
+            <p class="mesageErreurFormulaire">{{validation.message}}</p>
+          </div>
+        </ng-container  >
+      </div>
+      <ion-item>
+        <ion-label floating>Confirmer :</ion-label>
+        <ion-input formControlName="confMdp" type="password" maxlength="20" ></ion-input>
+      </ion-item>
+      <div>
+        <ng-container  *ngFor="let validation of validation_messages.confMdp" >
+          <div *ngIf="formProfil.get('confMdp').hasError(validation.type) && formProfil.get('confMdp').touched">
+            <p class="mesageErreurFormulaire">{{validation.message}}</p>
+          </div>
+          <div *ngIf="verifPsw() && formProfil.get('confMdp').touched && !formProfil.get('confMdp').hasError(validation.type)">
+            <p>Le mot de passe renseigné ne correspont pas.</p>
+          </div>
+        </ng-container  >
+      </div>
+      <ion-item floating>
+        <ion-label>Fumeur :</ion-label>
+        <span item-content>Non</span>
+        <ion-toggle formControlName="fumeur" class="text-toggle" type="radio" required></ion-toggle>
+        <span item-end>Oui</span>
+      </ion-item>
+      <div>
+        <ng-container  *ngFor="let validation of validation_messages.fumeur" >
+          <div *ngIf="formProfil.get('fumeur').hasError(validation.type) && formProfil.get('fumeur').touched">
+            <p class="mesageErreurFormulaire">{{validation.message}}</p>
+          </div>
+        </ng-container  >
+      </div>
+      <ion-item>
+        <ion-label floating>Musiques Favories :</ion-label>
+        <ion-select  formControlName="musiqueFavoris" type="checkbox" required>
+          <ion-option value="Généraliste">Généraliste</ion-option>
+          <ion-option value="RnB">RnB</ion-option>
+          <ion-option value="Hip Hop">Hip Hop</ion-option>
+          <ion-option value="Latino">Latino</ion-option>
+          <ion-option value="House">House</ion-option>
+          <ion-option value="Rock">Rock</ion-option>
+          <ion-option value="Disco">Disco</ion-option>
+          <ion-option value="Techno">Techno</ion-option>
+          <ion-option value="Afro">Afro</ion-option>
+          <ion-option value="Electro">Electro</ion-option>
+          <ion-option value="Salsa">Salsa</ion-option>
+          <ion-option value="Funk">Funk</ion-option>
+          <ion-option value="Reggae">Reggae</ion-option>
+          <ion-option value="Styles variés">Styles variés</ion-option>
+        </ion-select>
+      </ion-item>
+      <div>
+        <ng-container  *ngFor="let validation of validation_messages.musiqueFavoris" >
+          <div *ngIf="formProfil.get('musiqueFavoris').hasError(validation.type) && formProfil.get('musiqueFavoris').touched">
+            <p class="mesageErreurFormulaire">{{validation.message}}</p>
+          </div>
+        </ng-container  >
+      </div>
+      <ion-item>
+        <ion-label floating>Club Favoris :</ion-label>
+        <ion-select formControlName="clubFavoris" type="checkbox" required>
+          <ion-option value="Le Milk">Le Milk</ion-option>
+          <ion-option value="Le Heat">Le Heat</ion-option>
+          <ion-option value="Le Pulp">Le Pulp</ion-option>
+          <ion-option value="L'Osmose">L'Osmose</ion-option>
+          <ion-option value="Le Coconuts">Le Coconuts</ion-option>
+          <ion-option value="Le Fizz">Le Fizz</ion-option>
+          <ion-option value="Le Point Zero">Le Point Zero</ion-option>
+          <ion-option value="L'Opéra">L'Opéra</ion-option>
+          <ion-option value="La Dune">La Dune</ion-option>
+          <ion-option value="Le Panama">Le Panama</ion-option>
+          <ion-option value="Le Dream">Le Dream</ion-option>
+          <ion-option value="L'OT">L'OT</ion-option>
+          <ion-option value="Les Coulisses">Les Coulisses</ion-option>
+          <ion-option value="Le Domaine de verchant">Le Domaine de verchant</ion-option>
+          <ion-option value="Le Clos">Le Clos</ion-option>
+          <ion-option value="Le Prose">Le Prose</ion-option>
+          <ion-option value="Le Mas du Ministre">Le Mas du Ministre</ion-option>
+          <ion-option value="Le Mas du courant">Le Mas du courant</ion-option>
+          <ion-option value="Le Mas du cheval">Le Mas du cheval</ion-option>
+          <ion-option value="Le Zèbre bleu">Le Zèbre bleu</ion-option>
+          <ion-option value="La Voile bleu">La Voile bleu</ion-option>
+          <ion-option value="L'Effet Mer">L'Effet Mer</ion-option>
+          <ion-option value="La Paillotte bambou">La Paillotte bambou</ion-option>
+          <ion-option value="Le Carré Mer">Le Carré Mer</ion-option>
+          <ion-option value="Le Beach">Le Beach</ion-option>
+          <ion-option value="Le Latzarro">Le Latzarro</ion-option>
+          <ion-option value="Les pieds nus">Les pieds nus</ion-option>
+          <ion-option value="Le Lezard">Le Lezard</ion-option>
+
+        </ion-select>
+      </ion-item>
+      <div>
+        <ng-container  *ngFor="let validation of validation_messages.clubFavoris" >
+          <div *ngIf="formProfil.get('clubFavoris').hasError(validation.type) && formProfil.get('clubFavoris').touched">
+            <p class="mesageErreurFormulaire">{{validation.message}}</p>
+          </div>
+        </ng-container  >
+      </div>
+      <div padding offset-1 col-10>
+        <button ion-button color="secondary" type="submit" (click)="verifUpdateProfil()" full>Valider</button>
+      </div>
+
+      <ion-item text-right>
+        <a (click)="showInfoPersoInscr()" class="curseurClick"><ion-icon name="arrow-dropleft-circle"></ion-icon> Retour </a>
+      </ion-item>
+    </div>
+  </form>
+</ion-content>

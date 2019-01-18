@@ -14,21 +14,37 @@
 
 
 <ion-content padding>
+  <form [formGroup]="formForgetMdp" novalidate>
   <ion-list style="margin-top: 20%">
     <ion-item style="padding-bottom: 10%">
       <ion-label floating>Votre adresse mail :</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input formControlName="mail" type="email" required></ion-input>
     </ion-item>
+    <div>
+      <ng-container  *ngFor="let validation of validation_messages.mail" >
+        <div *ngIf="formForgetMdp.get('mail').hasError(validation.type) && formForgetMdp.get('mail').touched" >
+          <p class="mesageErreurFormulaire">{{validation.message}}</p>
+        </div>
+      </ng-container  >
+    </div>
     <ion-item>
       <ion-label text-wrap>Je ne suis pas un robot</ion-label>
-      <ion-checkbox></ion-checkbox>
+      <ion-checkbox formControlName="checkIfBoth" required></ion-checkbox>
     </ion-item>
 <ion-item>
   <p text-wrap>Veuillez renseigner votre adresse mail, un nouveau mot de passe vous sera envoyé.</p>
 </ion-item>
+    <div>
+      <ng-container  *ngFor="let validation of validation_messages.checkIfBoth" >
+        <div *ngIf="formForgetMdp.get('checkIfBoth').hasError(validation.type)">
+          <p class="mesageErreurFormulaire">{{validation.message}}</p>
+        </div>
+      </ng-container  >
+    </div>
     <ion-item style="padding-top: 10%">
-      <button ion-button  color="secondary" block large >Confirmer</button>
+      <button ion-button  color="secondary" block large (click)="sendMailForNewMdp()">Confirmer</button>
       <button ion-button (click)="redirectHome()" color="danger" block large>Annuler</button>
     </ion-item>
   </ion-list>
+  </form>
 </ion-content>

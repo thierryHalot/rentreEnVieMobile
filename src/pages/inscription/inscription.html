@@ -23,8 +23,8 @@
     </ion-item>
     <div>
       <ng-container  *ngFor="let validation of validation_messages.nom" >
-        <div *ngIf="formInsc.get('nom').hasError(validation.type) && formInsc.get('nom').touched" class="erreurInsc">
-          <p>{{validation.message}}</p>
+        <div *ngIf="formInsc.get('nom').hasError(validation.type) && formInsc.get('nom').touched">
+          <p class="mesageErreurFormulaire">{{validation.message}}</p>
         </div>
       </ng-container  >
     </div>
@@ -34,8 +34,8 @@
     </ion-item>
       <div>
           <ng-container  *ngFor="let validation of validation_messages.prenom" >
-              <div *ngIf="formInsc.get('prenom').hasError(validation.type) && formInsc.get('prenom').touched" class="erreurInsc">
-                  <p>{{validation.message}}</p>
+              <div *ngIf="formInsc.get('prenom').hasError(validation.type) && formInsc.get('prenom').touched">
+                  <p class="mesageErreurFormulaire" >{{validation.message}}</p>
               </div>
           </ng-container  >
       </div>
@@ -45,8 +45,8 @@
     </ion-item>
       <div>
           <ng-container  *ngFor="let validation of validation_messages.age" >
-              <div *ngIf="formInsc.get('age').hasError(validation.type) && formInsc.get('age').touched" class="erreurInsc">
-                  <p>{{validation.message}}</p>
+              <div *ngIf="formInsc.get('age').hasError(validation.type) && formInsc.get('age').touched">
+                  <p class="mesageErreurFormulaire">{{validation.message}}</p>
               </div>
           </ng-container  >
       </div>
@@ -59,8 +59,8 @@
     </ion-item>
       <div>
           <ng-container  *ngFor="let validation of validation_messages.sexe" >
-              <div *ngIf="formInsc.get('sexe').hasError(validation.type) && formInsc.get('sexe').touched" class="erreurInsc">
-                  <p>{{validation.message}}</p>
+              <div *ngIf="formInsc.get('sexe').hasError(validation.type) && formInsc.get('sexe').touched">
+                  <p class="mesageErreurFormulaire">{{validation.message}}</p>
               </div>
           </ng-container  >
       </div>
@@ -70,8 +70,8 @@
     </ion-item>
       <div>
           <ng-container  *ngFor="let validation of validation_messages.tel" >
-              <div *ngIf="formInsc.get('tel').hasError(validation.type) && formInsc.get('tel').touched" class="erreurInsc">
-                  <p>{{validation.message}}</p>
+              <div *ngIf="formInsc.get('tel').hasError(validation.type) && formInsc.get('tel').touched">
+                  <p class="mesageErreurFormulaire">{{validation.message}}</p>
               </div>
           </ng-container  >
       </div>
@@ -81,8 +81,8 @@
     </ion-item>
       <div>
           <ng-container  *ngFor="let validation of validation_messages.adresse" >
-              <div *ngIf="formInsc.get('adresse').hasError(validation.type) && formInsc.get('adresse').touched" class="erreurInsc">
-                  <p>{{validation.message}}</p>
+              <div *ngIf="formInsc.get('adresse').hasError(validation.type) && formInsc.get('adresse').touched">
+                  <p class="mesageErreurFormulaire">{{validation.message}}</p>
               </div>
           </ng-container  >
       </div>
@@ -92,8 +92,8 @@
     </ion-item>
       <div>
           <ng-container  *ngFor="let validation of validation_messages.mail" >
-              <div *ngIf="formInsc.get('mail').hasError(validation.type) && formInsc.get('mail').touched" class="erreurInsc">
-                  <p>{{validation.message}}</p>
+              <div *ngIf="formInsc.get('mail').hasError(validation.type) && formInsc.get('mail').touched">
+                  <p class="mesageErreurFormulaire">{{validation.message}}</p>
               </div>
           </ng-container  >
       </div>
@@ -112,8 +112,8 @@
 
     <div>
         <ng-container  *ngFor="let validation of validation_messages.pseudo" >
-            <div *ngIf="formInsc.get('pseudo').hasError(validation.type) && formInsc.get('pseudo').touched" class="erreurInsc">
-                <p>{{validation.message}}</p>
+            <div *ngIf="formInsc.get('pseudo').hasError(validation.type) && formInsc.get('pseudo').touched">
+                <p class="mesageErreurFormulaire">{{validation.message}}</p>
             </div>
         </ng-container  >
     </div>
@@ -125,8 +125,8 @@
 
     <div>
         <ng-container  *ngFor="let validation of validation_messages.mdp" >
-            <div *ngIf="formInsc.get('mdp').hasError(validation.type) && formInsc.get('mdp').touched" class="erreurInsc">
-                <p>{{validation.message}}</p>
+            <div *ngIf="formInsc.get('mdp').hasError(validation.type) && formInsc.get('mdp').touched">
+                <p class="mesageErreurFormulaire">{{validation.message}}</p>
             </div>
         </ng-container  >
     </div>
@@ -136,11 +136,11 @@
   </ion-item>
     <div>
         <ng-container  *ngFor="let validation of validation_messages.confMdp" >
-            <div *ngIf="formInsc.get('confMdp').hasError(validation.type) && formInsc.get('confMdp').touched" class="erreurInsc">
-                <p>{{validation.message}}</p>
+            <div *ngIf="formInsc.get('confMdp').hasError(validation.type) && formInsc.get('confMdp').touched">
+                <p class="mesageErreurFormulaire">{{validation.message}}</p>
             </div>
-            <div *ngIf="verifPsw() && formInsc.get('confMdp').touched && !formInsc.get('confMdp').hasError(validation.type)" class="erreurInsc">
-                <p>Le mot de passe renseigné ne correspont pas.</p>
+            <div *ngIf="verifPsw() && formInsc.get('confMdp').touched && !formInsc.get('confMdp').hasError(validation.type)">
+                <p class="mesageErreurFormulaire">Le mot de passe renseigné ne correspont pas.</p>
             </div>
         </ng-container  >
     </div>
@@ -152,8 +152,8 @@
   </ion-item>
     <div>
         <ng-container  *ngFor="let validation of validation_messages.fumeur" >
-            <div *ngIf="formInsc.get('fumeur').hasError(validation.type) && formInsc.get('fumeur').touched" class="erreurInsc">
-                <p>{{validation.message}}</p>
+            <div *ngIf="formInsc.get('fumeur').hasError(validation.type) && formInsc.get('fumeur').touched">
+                <p class="mesageErreurFormulaire">{{validation.message}}</p>
             </div>
         </ng-container  >
     </div>
@@ -178,8 +178,8 @@
   </ion-item>
     <div>
         <ng-container  *ngFor="let validation of validation_messages.musiqueFavoris" >
-            <div *ngIf="formInsc.get('musiqueFavoris').hasError(validation.type) && formInsc.get('musiqueFavoris').touched" class="erreurInsc">
-                <p>{{validation.message}}</p>
+            <div *ngIf="formInsc.get('musiqueFavoris').hasError(validation.type) && formInsc.get('musiqueFavoris').touched">
+                <p class="mesageErreurFormulaire">{{validation.message}}</p>
             </div>
         </ng-container  >
     </div>
@@ -219,43 +219,199 @@
   </ion-item>
     <div>
         <ng-container  *ngFor="let validation of validation_messages.clubFavoris" >
-            <div *ngIf="formInsc.get('clubFavoris').hasError(validation.type) && formInsc.get('clubFavoris').touched" class="erreurInsc">
-                <p>{{validation.message}}</p>
+            <div *ngIf="formInsc.get('clubFavoris').hasError(validation.type) && formInsc.get('clubFavoris').touched">
+                <p class="mesageErreurFormulaire">{{validation.message}}</p>
             </div>
         </ng-container  >
     </div>
   <ion-item>
     <div text-wrap style="max-height: 100px; overflow-y: auto;">
-      <p>dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf
-        dhsdhqskjfhsskjfhqqkjfhqkjsfhqskjfhqskjfhqksjhfqshfqkjsh
-        fqkjshfqskjfhqskjfhjshfqksjhfkjqshfkqsjhf fqhfjqshfkjqhfkjqshfqshfjkqhsf</p>
+        <br>
+        <h5 text-center>Conditions Générales</h5>
+      <h6>1. Objet</h6>
+        <p>
+            L'association Rentre En Vie (ci-après, «<strong> REV </strong>») édite une plateforme de covoiturage accessible sur un site internet notamment à l’adresse www.RENTREENVIE.fr ou sous forme d’application mobile et destinée à (i) mettre en relation des conducteurs se rendant à une destination donnée pour leur propre compte avec des passagers allant dans la même direction afin de leur permettre de partager le trajet avant ou après une sortie festive un peu trop alcoolisée.<br>
+            Les présentes conditions générales d’utilisation ont pour objet d’encadrer l’accès et les modalités d’utilisation de la Plateforme.<br> Nous vous invitons à en prendre attentivement connaissance.<br> Vous comprenez et reconnaissez que REV n’est partie à aucun accord, contrat ou relation contractuelle, de quelque nature que ce soit, conclu entre les Membres de sa Plateforme ou avec un Autocariste.
+            En cliquant sur le bouton « Inscription avec un email », vous reconnaissez avoir pris connaissance et accepter l’intégralité des présentes conditions générales d’utilisation.
+        </p>
+        <h6>2. Définitions</h6>
+        <p>Dans les présentes,<br>
+
+            « <strong>Annonce de Covoiturage</strong> » désigne une annonce concernant un Trajet posté sur la Plateforme par un Conducteur de type SAM ;<br>
+            « <strong>REV</strong> » a la signification qui lui est donnée à l’article 1 ci-dessus ;<br>
+            « <strong>CGU</strong> » désigne les présentes Conditions Générales d’Utilisation ;<br>
+            « <strong>Compte</strong> » désigne le compte qui doit être créé pour pouvoir devenir Membre et accéder à certains services proposés par la Plateforme ;<br>
+            « <strong>Conducteur</strong> » désigne le Membre proposant, sur la Plateforme, de transporter une autre personne physique, pour un trajet et un horaire défini par lui-seul ;<br>
+            « <strong>Confirmation de Réservation</strong> » a la signification qui lui est donnée à l’article 4.2.1 ci-dessous ;<br>
+            « <strong>Contenu Membre</strong> » a la signification qui lui est donnée à l’article 11.2 ci-dessous ;<br>
+            « <strong>Membre</strong> » désigne toute personne physique ayant créé un Compte sur la Plateforme ;<br>
+            « <strong>Passager</strong> » désigne le Membre ayant accepté la proposition d’être transporté par le Conducteur ou, le cas échéant, la personne pour le compte de laquelle un Membre a réservé une Place;<br>
+            « <strong>Place</strong> » désigne la place réservée par un Passager à bord du véhicule d’un Conducteur;<br>
+            « <strong>Plateforme</strong> » a le sens qui lui est donné à l’article 1, ci-dessus ;<br>
+            « <strong>Réservation</strong> » a le sens qui lui est donné à l’article 4.2.1. ci-dessous ;<br>
+            « <strong>Site</strong> » désigne le site internet accessible à l’adresse www.RENTREENVIE.fr ;<br>
+            « <strong>Trajet</strong> » désigne indistinctement un Trajet en Covoiturage<br>
+            « <strong>Trajet en Covoiturage</strong> » désigne le trajet faisant l’objet d’une Annonce de Covoiturage publiée par un Conducteur sur la Plateforme et pour lequel il accepte de transporter des Passagers<br>
+        </p>
+        <h5>3. Inscription à la Plateforme et création de Compte</h5>
+        <h6>3.1. Conditions d’inscription à la Plateforme</h6>
+        <p>L’utilisation de Plateforme est réservée aux personnes physiques âgées de 18 ans ou plus.<br> Toute inscription sur la Plateforme par une personne mineure est strictement interdite.<br> En accédant, utilisant ou vous inscrivant sur la Plateforme, vous déclarez et garantissez avoir 18 ans ou plus.
+        </p>
+        <h6>3.2. Création de Compte</h6>
+        <p>La Plateforme permet aux Membres de publier des Annonces de Covoiturage et consulter des Annonces ainsi que d’interagir entre eux pour la réservation de Place.<br>
+            Vous ne pouvez pas consulter les Annonces si vous n’êtes pas inscrit sur la Plateforme.<br>
+            Vous ne pouvez ni publier une Annonce de Covoiturage ni réserver une Place sans avoir, au préalable, créé un Compte et être devenu Membre.<br>
+            Pour créer votre Compte, vous pouvez :<br>
+            (i) soit remplir l’ensemble des champs obligatoires figurant sur le formulaire d’inscription ;<br>
+            Pour vous inscrire sur la Plateforme, vous devez avoir lu et accepter les présentes CGU.<br>
+            A l’occasion de la création de votre Compte, et ce quelle que soit la méthode choisie pour ce faire, vous vous engagez à fournir des informations personnelles exactes et conformes à la réalité et à les mettre à jour, par l’intermédiaire de votre profil ou en en avertissant REV, afin d’en garantir la pertinence et l’exactitude tout au long de votre relation contractuelle avec REV.<br>
+            En cas d’inscription par email, vous vous engagez à garder secret le mot de passe choisi lors de la création de votre Compte et à ne le communiquer à personne. En cas de perte ou divulgation de votre mot de passe, vous vous engagez à en informer sans délai REV. Vous êtes seul responsable de l’utilisation faite de votre Compte par un tiers, tant que vous n’avez pas expressément notifié REV de la perte, l’utilisation frauduleuse par un tiers ou la divulgation de votre mot de passe à un tiers.
+            Vous vous engagez à ne pas créer ou utiliser, sous votre propre identité ou celle d’un tiers, d’autres Comptes que celui initialement créé.</p>
+        <h6>3.3. Vérification</h6>
+        <p>REV peut, à des fins de transparence, d’amélioration de la confiance, ou de prévention ou détection des fraudes, mettre en place un système de vérification de certaines des informations que vous fournissez sur votre profil.<br> C’est notamment le cas lorsque vous renseignez votre numéro de téléphone ou nous fournissez une pièce d’identité.<br>
+            Vous reconnaissez et acceptez que toute référence sur la Plateforme ou les Services à des informations dites « vérifiées » ou tout terme similaire, signifie uniquement qu’un Membre a réussi avec succès la procédure de vérification existante sur la Plateforme ou les Services afin de vous fournir davantage d’informations sur le Membre avec lequel vous envisagez de voyager.<br> REV ne garantit ni la véracité, ni la fiabilité, ni la validité de l’information ayant fait l’objet de la procédure de vérification.</p>
+        <h5>4. Utilisation des Services</h5>
+        <h6>4.1. Publication des Annonces de Covoiturage</h6>
+        <p>En tant que Membre, et sous réserve que vous remplissiez les conditions ci-dessous, vous pouvez créer et publier des Annonces de Covoiturage sur la Plateforme en indiquant des informations quant au Trajet en Covoiturage que vous comptez effectuer (dates/heures et lieux de départ et d’arrivée, nombre de places offertes, options proposées, etc.).<br>
+            Vous n’êtes autorisé à publier une Annonce de Covoiturage que si vous remplissez l’ensemble des conditions suivantes :<br></p>
+        <ul>
+            <li>(i) vous êtes titulaire d’un permis de conduire valide ;</li>
+            <li>(ii) vous ne proposez des Annonces de Covoiturage que pour des véhicules dont vous êtes le propriétaire ou que vous utilisez avec l’autorisation expresse du propriétaire, et dans tous les cas, que vous êtes autorisés à utiliser à des fins de covoiturage ;</li>
+            <li>(iii) vous êtes et demeurez le conducteur principal du véhicule, objet de l’Annonce de Covoiturage ;</li>
+            <li>(iv) le véhicule bénéficie d’une assurance au tiers valide ;</li>
+            <li>(v) vous n’avez aucune contre-indication ou incapacité médicale à conduire ;</li>
+            <li>(vi) le véhicule que vous comptez utiliser pour le Trajet est une voiture de tourisme à 4 roues, disposant d’un maximum de 7 places assises, à l’exclusion des voitures dites « sans permis » ;</li>
+            <li>(vii) vous ne comptez pas publier une autre annonce pour le même Trajet en Covoiturage sur la Plateforme ;</li>
+            <li>(viii) vous n’offrez pas plus de Places que celles disponibles dans votre véhicule ;</li>
+            <li>(ix) toutes les Places offertes ont une ceinture de sécurité, et ce même si le véhicule est homologué en présence de sièges dépourvus de ceinture de sécurité ;</li>
+            <li>(x) vous utilisez un véhicule en parfait état de fonctionnement et conforme aux usages et dispositions légales applicables, notamment avec un contrôle technique à jour ;</li>
+            <li>(xi) vous êtes un consommateur et n’agissez pas à titre professionnel.</li>
+        </ul>
+       <p>
+           Vous reconnaissez être le seul responsable du contenu de l’Annonce de Covoiturage que vous publiez sur la Plateforme.<br> En conséquence, vous déclarez et garantissez l’exactitude et la véracité de toute information contenue dans votre Annonce de Covoiturage et vous engagez à effectuer le Trajet en Covoiturage selon les modalités décrites dans votre Annonce de Covoiturage.
+           Votre Annonce de Covoiturage sera publiée sur la Plateforme et donc visible des Membres, effectuant une recherche sur la Plateforme ou sur le site internet des partenaires de REV.<br> REV se réserve la possibilité, à sa seule discrétion et sans préavis, de ne pas publier ou retirer, à tout moment, toute Annonce de Covoiturage qui ne serait pas conforme aux CGU ou qu’elle considérerait comme préjudiciable à son image, celle de la Plateforme ou celle des Services.<br>
+           Vous êtes également informés de ce que dans le cas où vous vous présenteriez en tant que consommateur en utilisant la Plateforme alors que vous agissez en réalité à titre professionnel vous vous exposez aux sanctions prévues à l’article<a href="https://www.legifrance.gouv.fr/affichCodeArticle.do?cidTexte=LEGITEXT000006069565&idArticle=LEGIARTI000032221105&dateTexte=&categorieLien=cid"> L.132-2 du Code de la consommation</a>.
+       </p>
+<h6>4.2. Réservation d’une Place</h6>
+        <p>REV a mis en place un système de réservation de Places en ligne (la « <strong>Réservation</strong> ») pour les Trajets proposés sur la Plateforme.
+            Les modalités de réservation d’une Place dépendent de la nature du Trajet envisagé.</p>
+        <h6>4.2.1. Trajet en Covoiturage</h6>
+        <p>Lorsqu’un Passager est intéressé par une Annonce de Covoiturage, il peut effectuer une demande de Réservation en ligne. </p>
+        <h5>4.3. Système d’avis</h5>
+        <h6>4.3.1. Fonctionnement</h6>
+        <p>REV vous encourage à laisser un avis sur un Conducteur (si vous êtes Passager) ou un Passager (si vous êtes Conducteur) avec lequel vous avez partagé un Trajet ou avec lequel vous étiez censé partager un Trajet.<br> En revanche, vous n’êtes pas autorisé à laisser un avis sur un autre Passager, si vous étiez vous-même Passager, ni sur un Membre avec lequel vous n’avez pas voyagé ou avec lequel vous n’étiez pas censé voyager.<br>
+            Votre avis, ainsi que celui laissé par un autre Membre à votre égard, le cas échéant, ne sont visibles et publiés sur la Plateforme qu’après le plus court des délais suivants : (i) immédiatement après que vous ayez, tous les deux, laissés un avis  ou (ii) passé un délai de 14 jours après le premier avis laissé.</p>
+        <h6>4.3.2. Modération</h6>
+        <p>Vous reconnaissez et acceptez que REV se réserve la possibilité de ne pas publier ou supprimer tout avis, toute question, tout commentaire ou toute réponse dont elle jugerait le contenu contraire aux présentes CGU.</p>
+        <h6>4.3.3. Seuil</h6>
+        <p>REV se réserve la possibilité de suspendre votre Compte, limiter votre accès aux Services ou résilier les présentes CGU dans le cas où (i) vous avez reçu au moins trois avis et (ii) la moyenne des avis que vous avez reçus est égale ou inférieure à 3.</p>
+        <h6>5. Conditions financières</h6>
+        <p>L’accès et l’inscription à la Plateforme, de même que la recherche, la consultation et la publication d’Annonces ainsi que la réservation de place sont gratuits. </p>
+        <h6>6. Finalité non commerciale et non professionnelle de l’utilisation par des Conducteurs des Services et de la Plateforme</h6>
+        <p>Vous vous engagez à n’utiliser les Services et la Plateforme que pour être mis en relation, à titre non professionnel et non commercial, avec des personnes souhaitant partager un Trajet en Covoiturage avec vous.<br>
+            En tant que Conducteur, vous vous engagez à ne pas demander une Participation aux Frais que vous supportez réellement.<br>
+            REV se réserve la possibilité de suspendre votre Compte dans le cas où vous utiliseriez un véhicule professionnel de type VTC ou taxi, une voiture de fonction ou de service et généreriez de ce fait un bénéfice grâce à la Plateforme.<br> Vous vous engagez à fournir à REV, sur simple demande de la part de celle-ci, une copie de votre carte grise et/ou tout autre document de nature à attester que vous êtes autorisé à utiliser ce véhicule sur la Plateforme et n’en tirez aucun bénéfice.<br>
+            REV se réserve également la possibilité de suspendre votre Compte, limiter votre accès aux Services ou résilier les présentes CGU en cas d’activité de votre part sur la Plateforme, qui, du fait de la nature des trajets proposés, de leur fréquence, entrainerait une situation de bénéfice pour vous ou pour quelque raison que ce soit faisant suspecter à REV que vous générez un bénéfice sur la Plateforme.</p>
+<h5>7. Comportement des utilisateurs de la Plateforme et Membres</h5>
+        <h6>7.1. Engagement de tous les utilisateurs de la Plateforme</h6>
+        <p>Vous reconnaissez être seul responsable du respect de l’ensemble des lois, règlements et obligations applicables à votre utilisation de la Plateforme.<br>
+            Par ailleurs, en utilisant la Plateforme et lors des Trajets, vous vous engagez à :</p>
+        <ul>
+            <li>(i) ne pas utiliser la Plateforme à des fins professionnelles, commerciales ou lucratives ;</li>
+            <li>(ii) ne transmettre à REV (notamment lors de la création ou la mise à jour de votre Compte) ou aux autres Membres aucune information fausse, trompeuse, mensongère ou frauduleuse ;</li>
+            <li>(iii) ne tenir aucun propos, n’avoir aucun comportement ou ne publier sur la Plateforme aucun contenu à caractère diffamatoire, injurieux, obscène, pornographique, vulgaire, offensant, agressif, déplacé, violent, menaçant, harcelant, raciste, xénophobe, à connotation sexuelle, incitant à la haine, à la violence, à la discrimination ou à la haine, encourageant les activités ou l’usage de substances illégales ou, plus généralement, contraires aux finalités de la Plateforme, de nature à porter atteinte aux droits de REV ou d’un tiers ou contraires aux bonnes mœurs ;</li>
+            <li>(iv) ne pas porter atteinte aux droits et à l’image de REV, notamment à ses droits de propriété intellectuelle ;</li>
+            <li>(v) ne pas ouvrir plus d’un Compte sur la Plateforme et ne pas ouvrir de Compte au nom d’un tiers ;</li>
+            <li>(vii) ne pas contacter un autre Membre, notamment par l’intermédiaire de la Plateforme, à une autre fin que celle de définir les modalités du covoiturage ;</li>
+            <li>(ix) vous conformer aux présentes CGU et à la Politique de Confidentialité.</li>
+        </ul>
+        <h6>7.2. Engagements des Conducteurs</h6>
+        <p>En outre, lorsque vous utilisez la Plateforme en tant que Conducteur, vous vous engagez à :</p>
+        <ul>
+            <li>(i) respecter l’ensemble des lois, règles, codes applicables à la conduite et au véhicule, notamment à disposer d’une assurance responsabilité civile valide au moment du Trajet en Covoiturage et être en possession d’un permis de conduire en vigueur ;</li>
+            <li>(ii) vous assurer que votre assurance couvre le covoiturage et que vos Passagers sont considérés comme tiers dans votre véhicule et donc couverts par votre assurance ;</li>
+            <li>(iii) ne prendre aucun risque au volant, à n’absorber aucun produit de nature à altérer votre attention et vos capacités, à conduire avec vigilance et en toute sécurité ;</li>
+            <li>(iv) publier des Annonces de Covoiturage correspondant uniquement à des trajets réellement envisagés ;</li>
+            <li>(v) effectuer le Trajet en Covoiturage tel que décrit dans l’Annonce de Covoiturage (notamment en ce qui concerne l’emprunt ou non de l’autoroute) et respecter les horaires et lieux convenus avec les autres Membres (notamment lieu de rendez-vous et de dépose) ;</li>
+            <li>(vi) ne pas prendre plus de Passagers que le nombre de Places indiquées dans l’Annonce de Covoiturage ;</li>
+            <li>(vii) utiliser un véhicule en parfait état de fonctionnement et conforme aux usages et dispositions légales applicables, notamment avec un contrôle technique à jour ;</li>
+            <li>(viii) communiquer à REV ou tout Passager qui vous en fait la demande, votre permis de conduire, votre carte grise, votre attestation d’assurance, votre certificat de contrôle technique ainsi que tout document attestant de votre capacité à utiliser ce véhicule en tant que Conducteur sur la Plateforme ;</li>
+            <li>(ix) en cas d’empêchement ou de changement de l’horaire ou du Trajet en Covoiturage, en informer sans délais vos Passagers ;</li>
+            <li>(x) en cas de Trajet en Covoiturage transfrontalier, disposer et tenir à disposition du Passager et de toute autorité qui le solliciterait tout document de nature à justifier de votre identité et de votre faculté à franchir la frontière ;</li>
+            <li>(xi) attendre les Passagers sur le lieu de rencontre convenu au moins 15 minutes au-delà de l’heure convenue ;</li>
+            <li>(xii) ne pas publier d’Annonce de Covoiturage relative à un véhicule dont vous n’êtes pas le propriétaire ou que vous n’êtes pas habilité à utiliser à des fins de covoiturage ;</li>
+            <li>(xiii) vous assurer d’être joignable par téléphone par vos Passagers, au numéro enregistré sur votre profil ;</li>
+            <li>(xiv) ne générer aucun bénéfice par l’intermédiaire de la Plateforme ;</li>
+            <li>(xv) garantir n’avoir aucune contre-indication ou incapacité médicale à conduire ;</li>
+            <li>(xvi) avoir un comportement convenable et responsable, au cours du Trajet en Covoiturage et conforme à l’esprit de covoiturage.</li>
+        </ul>
+        <h6>7.3. Engagements des Passagers</h6>
+        <h5>7.3.1. Lors d’un Trajet en Covoiturage</h5>
+        <p>Lorsque vous utilisez la Plateforme en tant que Passager dans le cadre d’un Trajet en Covoiturage, vous vous engagez à :</p>
+        <ul>
+            <li>(i) adopter un comportement convenable au cours du Trajet en Covoiturage de façon à ne gêner ni la concentration et la conduite du Conducteur ni la tranquillité des autres Passagers ;</li>
+            <li>(ii) respecter le véhicule du Conducteur et sa propreté ;</li>
+            <li>(iii) en cas d’empêchement, en informer sans délai le Conducteur ;</li>
+            <li>(iv) attendre le Conducteur sur le lieu de rencontre convenu au moins 15 minutes au-delà de l’heure convenue ;</li>
+            <li>(v) communiquer à REV ou tout Conducteur qui vous en fait la demande, votre carte d’identité ou tout document de nature à attester de votre identité ;</li>
+            <li>(vi) ne transporter, lors d’un Trajet en Covoiturage, aucun objet, marchandise, substance, animal de nature à gêner la conduite et la concentration du Conducteur ou dont la nature, la possession ou le transport est contraire aux dispositions légales en vigueur ;</li>
+            <li>(vii) en cas de Trajet en Covoiturage transfrontalier, disposer et tenir à disposition du Conducteur et de toute autorité qui le solliciterait tout document de nature à justifier de votre identité et de votre faculté à franchir la frontière ;</li>
+            <li>(viii) vous assurer d’être joignable par téléphone par le Conducteur, au numéro enregistré sur votre profil, notamment au point de rendez-vous.
+                Dans le cas où vous auriez procédé à la Réservation d’une ou plusieurs Places pour le compte de tiers, conformément aux stipulations de l’article 4.2.3 ci-dessus, vous vous portez fort du respect par ce tiers des stipulations du présent article et, de façon générale, des présentes CGU. REV se réserve la possibilité de suspendre votre Compte, limiter votre accès aux Services ou résilier les présentes CGU, en cas de manquement de la part du tiers pour le compte duquel vous avez réservé une Place aux présentes CGU.</li>
+        </ul>
+        <h6>8. Suspension de comptes, limitation d’accès et résiliation</h6>
+        <p>Vous avez la possibilité de mettre fin à votre relation contractuelle avec REV à tout moment, sans frais et sans motif. Pour cela, il vous suffit de vous rendre dans l’onglet « Fermeture de compte » de votre page Profil.
+            En cas de (i) violation de votre part des présentes CGU, notamment de vos obligations en tant que Membre mentionnées aux articles 6 et 8 ci-dessus, (ii) de dépassement du seuil visé à l’article 4.3.3. ci-dessus ou si (iii) REV a des raisons sérieuses de croire que ceci est nécessaire pour protéger sa sécurité et son intégrité, celles de ses Membres ou de tiers ou à des fins de prévention des fraudes ou d’enquêtes, REV se réserve la possibilité de :</p>
+        <ul>
+            <li>(i) résilier, immédiatement et sans préavis, les présentes CGU ; et/ou</li>
+            <li>(ii) empêcher la publication ou supprimer tout avis, Annonce, messages, contenus, demande de Réservation, ou tout contenu publié par vous sur la Plateforme ; et/ou</li>
+            <li>(iii) limiter votre accès et votre utilisation de la Plateforme ; et/ou</li>
+            <li>(iv) suspendre de façon temporaire ou permanente votre Compte.</li>
+            <p>Lorsque cela est nécessaire, vous serez notifié de la mise en place d’une telle mesure afin de vous permettre de donner des explications à REV. REV décidera, à sa seule discrétion, de lever les mesures mises en place ou non.</p>
+        </ul>
+        <h6>9. Données personnelles</h6>
+        <p>Dans le cadre de votre utilisation de la Plateforme, REV est amenée à collecter et traiter certaines de vos données personnelles.<br> En utilisant la Plateforme et vous inscrivant en tant que Membre, vous reconnaissez et acceptez le traitement de vos données personnelles par REV conformément à la loi applicable.</p>
+        <h5>10. Propriété intellectuelle</h5>
+        <h6>10.1. Contenu publié par REV</h6>
+        <p>Sous réserve des contenus fournis par ses Membres, REV est seule titulaire de l’ensemble des droits de propriété intellectuelle afférents au Service, à la Plateforme, à son contenu (notamment les textes, images, dessins, logos, vidéos, sons, données, graphiques) ainsi qu’aux logiciels et bases de données assurant leur fonctionnement.<br>
+            REV vous accorde une licence non exclusive, personnelle et non cessible d’utilisation de la Plateforme et des Services, pour votre usage personnel et privé, à titre non commercial et conformément aux finalités de la Plateforme et des Services.
+            Vous vous interdisez toute autre utilisation ou exploitation de la Plateforme et des Services, et de leur contenu sans l’autorisation préalable écrite de REV. Notamment, vous vous interdisez de :</p>
+        <ul>
+            <li>(i) reproduire, modifier, adapter, distribuer, représenter publiquement, diffuser la Plateforme, les Services et leur contenu, à l’exception de ce qui est expressément autorisé par REV ;</li>
+            <li>(ii) décompiler, procéder à de l’ingénierie inverse de la Plateforme ou des Services, sous réserve des exceptions prévues par les textes en vigueur ;</li>
+            <li>(iii) extraire ou tenter d’extraire (notamment en utilisant des robots d’aspiration de données ou tout autre outil similaire de collecte de données) une partie substantielle des données de la Plateforme.</li>
+        </ul>
+        <h6>10.2. Contenu publié par vous sur la Plateforme</h6>
+        <p>Afin de permettre la fourniture des Services et conformément à la finalité de la Plateforme, vous concédez à REV une licence non exclusive d’utilisation des <strong>contenus et données</strong> que vous fournissez dans le cadre de votre utilisation des Services (ci-après, votre « <strong>Contenu Membre</strong> »).<br> Afin de permettre à REV la diffusion par réseau numérique et selon tout protocole de communication, (notamment Internet et réseau mobile), ainsi que la mise à disposition au public du contenu de la Plateforme, vous autorisez REV, pour le monde entier et pour toute la durée de votre relation contractuelle avec REV, à reproduire, représenter, adapter et traduire votre Contenu Membre de la façon suivante :</p>
+        <ul>
+            <li>(i) vous autorisez REV à reproduire tout ou partie de votre Contenu Membre sur tout support d’enregistrement numérique, connu ou inconnu à ce jour, et notamment sur tout serveur, disque dur, carte mémoire, ou tout autre support équivalent, en tout format et par tout procédé connu et inconnu à ce jour, dans la mesure nécessaire à toute opération de stockage, sauvegarde, transmission ou téléchargement lié au fonctionnement de la Plateforme et à la fourniture du Service ;</li>
+            <li>(ii) vous autorisez REV à adapter et traduire votre Contenu Membre, ainsi qu’à reproduire ces adaptations sur tout support numérique, actuel ou futur, stipulé au (i) ci-dessus, dans le but de fournir les Services, notamment en différentes langues. Ce droit comprend notamment la faculté de réaliser, dans le respect de votre droit moral, des modifications de la mise en forme de votre Contenu Membre aux fins de respecter la charte graphique de la Plateforme et/ou de le rendre techniquement compatible en vue de sa publication via la Plateforme.</li>
+        </ul>
+        <h6>11. Rôle de REV</h6>
+        <p>La Plateforme constitue une plateforme en ligne de mise en relation sur laquelle les Membres peuvent créer et publier des Annonces de Covoiturage pour des Trajets en Covoiturage.<br> Ces Annonces de Covoiturage peuvent notamment être consultées par les autres Membres pour prendre connaissance des modalités du Trajet et, le cas échéant, réserver directement une Place dans le véhicule concerné auprès du Membre ayant posté l’annonce sur la Plateforme.<br>
+            En utilisant la Plateforme et en acceptant les présentes CGU, vous reconnaissez que REV n’est partie à aucun accord conclu entre vous et les autres Membres en vue de partager les frais afférents à un Trajet.<br>
+            REV n’a aucun contrôle sur le comportement de ses Membres, et des utilisateurs de la Plateforme.<br> Elle ne possède pas, n’exploite pas, ne fournit pas, ne gère pas les véhicules objets des Annonces, ni ne propose le moindre Trajet sur la Plateforme.<br>
+            Vous reconnaissez et acceptez que REV ne contrôle ni la validité, ni la véracité, ni la légalité des Annonces, des Places et Trajets proposés.<br> En sa qualité d’intermédiaire en covoiturage, REV ne fournit aucun service de transport et n’agit pas en qualité de transporteur, le rôle de REV se limitant à faciliter l’accès à la Plateforme.<br>
+            Dans le cadre d’un Trajet en Covoiturage, les Membres (Conducteurs ou Passagers) agissent sous leur seule et entière responsabilité, notamment conformément aux dispositions du code civil relatives au droit des obligations et à la responsabilité civile contractuelle (<a href="https://www.legifrance.gouv.fr/affichCode.do?idArticle=LEGIARTI000032040787&idSectionTA=LEGISCTA000032040792&cidTexte=LEGITEXT000006070721&dateTexte=20180226">article 1101 et suivants du Code Civil</a>).<br>
+                En sa qualité d’intermédiaire, REV ne saurait voir sa responsabilité engagée au titre du déroulement effectif d’un Trajet, et notamment du fait :</p>
+        <ul>
+            <li>(i) d’informations erronées communiquées par le Conducteur, dans son Annonce, ou par tout autre moyen, quant au Trajet et à ses modalités ;</li>
+            <li>(ii) l’annulation ou la modification d’un Trajet par un Membre ;</li>
+            <li>(iii) le comportement de ses Membres pendant, avant, ou après le Trajet.</li>
+        </ul>
+    <h6>12. Fonctionnement, disponibilité et fonctionnalités de la Plateforme</h6>
+        <p>REV s’efforcera, dans la mesure du possible, de maintenir la Plateforme accessible 7 jours sur 7 et 24 heures sur 24. Néanmoins, l’accès à la Plateforme pourra être temporairement suspendu, sans préavis, en raison d’opérations techniques de maintenance, de migration, de mises à jour ou en raison de pannes ou de contraintes liées au fonctionnement des réseaux.<br>
+            En outre, REV se réserve le droit de modifier ou d’interrompre, à sa seule discrétion, de manière temporaire ou permanente, tout ou partie de l’accès à la Plateforme ou de ses fonctionnalités.</p>
+        <h6>13. Modification des CGU</h6>
+        <p>Les présentes CGU et les documents intégrés par référence expriment l’intégralité de l’accord entre vous et REV relative à votre utilisation des Services.<br> Tout autre document, notamment toute mention sur la Plateforme (FAQ, etc.), n’a qu’une valeur informative.<br>
+            REV pourra être amenée à modifier les présentes Conditions Générales d’Utilisation afin de s’adapter à son environnement technologique et commercial et afin de se conformer à la réglementation en vigueur.<br> Toute modification des présentes CGU sera publiée sur la Plateforme avec une mention de la date de mise à jour et vous sera notifiée par REV avant son entrée en vigueur.</p>
+        <h6>14. Droit applicable – Litige</h6>
+        <p>Les présentes CGU sont rédigées en français et soumises à la loi française. Conformément aux règles applicables à la médiation, vous êtes tenus, avant toute demande de médiation, d’avoir fait préalablement part par écrit à REV de tout litige afin d’obtenir une solution amiable.</p>
+        <h6>15. Mentions légales</h6>
+        <p>La Plateforme est éditée par l'association Rentre En Vie, association de loi 1901 à but non lucratif immatriculée au Registre du Commerce et des Sociétés de Montpellier, sous le numéro 802.232.751 dont le siège social est situé au 25 rue de la méditerranée – 34070 Montpellier (France) (email : contact@RENTREENVIE.fr,                tel : 09.87.36.15.92), représentée par son Président, Thomas de Morais, Directeur de la publication du Site.</p>
+        <p>Le Site est hébergé sur les serveurs de Rentre En Vie , hébergés eux même chez OVH.<br>
+            L’assurance de responsabilité civile professionnelle est souscrite auprès de : Hiscox Europe Underwriting Limited, 19, rue Louis Le Grand, 75002 Paris – France.<br>
+            Pour toute question, vous pouvez contacter Rentre En Vie en utilisant le formulaire de contact en vous connectant sur le site ou en nous envoyant un mail.</p>
     </div>
   </ion-item>
   <ion-list>
@@ -265,18 +421,14 @@
   </ion-item>
       <div>
           <ng-container  *ngFor="let validation of validation_messages.condUtil" >
-              <div *ngIf="formInsc.get('condUtil').hasError(validation.type) && formInsc.get('condUtil').touched" class="erreurInsc">
-                  <p>{{validation.message}}</p>
+              <div *ngIf="formInsc.get('condUtil').hasError(validation.type) && formInsc.get('condUtil').touched">
+                  <p class="mesageErreurFormulaire">{{validation.message}}</p>
               </div>
           </ng-container  >
       </div>
   </ion-list>
   <div padding offset-1 col-10>
     <button ion-button color="secondary" type="submit"  full>Valider</button>
-  </div>
-
-  <div padding offset-1 col-10>
-    <button ion-button color="secondary" (click)="testAlert()"  full>Alerte</button>
   </div>
 
   <ion-item text-right>
